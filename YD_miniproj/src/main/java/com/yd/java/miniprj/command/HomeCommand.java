@@ -10,7 +10,7 @@ public class HomeCommand implements Command {
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
 		// 단순히 처음 접근하는 페이지를 보여줌
-		return "home/home.tiles";
+		return "layout/home.tiles";
 	}
 
 }
