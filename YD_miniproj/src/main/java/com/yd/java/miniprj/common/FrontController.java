@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yd.java.miniprj.command.HomeCommand;
+import com.yd.java.miniprj.member.MemberLoginForm;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -24,7 +25,8 @@ public class FrontController extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		// 명령 그룹을 담아 두는 곳
-		map.put("/home.do", new HomeCommand());			// 처음 접근하는 페이지
+		map.put("/home.do", new HomeCommand());				// 처음 접근하는 페이지
+		map.put("/memberLoginForm.do", new MemberLoginForm());	// 로그인 폼
 		
 	}
 
