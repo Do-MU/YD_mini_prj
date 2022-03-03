@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Minuk</title>
+<title></title>
 </head>
 <body>
 	<jsp:forward page="home.do"/>
