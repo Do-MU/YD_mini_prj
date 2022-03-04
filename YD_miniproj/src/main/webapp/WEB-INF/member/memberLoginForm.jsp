@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title></title>
 <style>
 	form{
 		padding: 200px 0 200px 0;
@@ -67,33 +62,45 @@
 	a:hover {
 		color: red;
 	}
-	
 </style>
-</head>
 
-<body>
-   <form>
-      <div id="login">
-         <h1>로 그 인</h1>
-         <div id="id_pass">
-               <div id="id">
-                  <input type="text" placeholder="아이디를 입력하세요.">
-               </div>
-               <div id="pass">
-                  <input type="password" placeholder="비밀번호를 입력하세요.">
-               </div>
-         </div>
+<script type="text/javascript">
+	function formCheck() {
+		if(frm.memberId.value == ""){
+			alert("아이디를 입력하세요.");
+			frm.memberId.focus();
+			return false;
+		}
+		
+		if(frm.memberPassword.value ==""){
+			alert("패스워드를 입력하세요.");
+			frm.memberPassword.focus();
+			return false;
+		}
+		frm.submit();
+	}
+</script>
+
+<form id="frm" name="frm" action="memberLogin.do" method="post">
+  <div id="login">
+     <h1>로 그 인</h1>
+     <div id="id_pass">
+           <div id="id">
+              <input type="text" placeholder="아이디를 입력하세요.">
+           </div>
+           <div id="pass">
+              <input type="password" placeholder="비밀번호를 입력하세요.">
+           </div>
+     </div>
             
-         <div id="login_btn">
-             <button style="height:110px;">로그인</button>
-         </div>
+     <div id="login_btn">
+         <button style="height:110px;" onclick="formCheck()">로그인</button>
+     </div>
          
-      	 <ul id="btns">
-         	<li><a href='memberFindIdForm.do'>아이디 찾기</a></li>
-         	<li><a href='memberFindPasswordForm.do'>비밀번호 찾기</a></li>
-         	<li><a href='memberJoinForm.do'>회원 가입</a></li>
-      	 </ul>
-      </div>
-   </form>
-</body>
-</html>
+   	 <ul id="btns">
+       	<li><a href='memberFindIdForm.do'>아이디 찾기</a></li>
+       	<li><a href='memberFindPasswordForm.do'>비밀번호 찾기</a></li>
+      	<li><a href='memberJoinForm.do'>회원 가입</a></li>
+   	 </ul>
+   </div>
+</form>
