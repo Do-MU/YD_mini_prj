@@ -42,21 +42,6 @@ public class MemberDAOImpl implements MemberDAO {
             return members;
          }
    
-   private void close() {
-      // Connection 연결을 종료하는 것
-      try {
-         if (rs != null)
-            rs.close();
-         if (psmt != null)
-            psmt.close();
-         if (con != null)
-            con.close();
-      } catch (SQLException e) {
-         e.printStackTrace();
-      }
-
-   }
-   
    @Override
    public MemberVO memberSelectOne(MemberVO mem) {
       // 한명분 조회
@@ -193,4 +178,20 @@ public class MemberDAOImpl implements MemberDAO {
             return vo;
          }
 
+
+   private void close() {
+      // Connection 연결
+      try {
+         if (rs != null)
+            rs.close();
+         if (psmt != null)
+            psmt.close();
+         if (con != null)
+            con.close();
+      } catch (SQLException e) {
+         e.printStackTrace();
+      }
+
+   }
+   
 }
