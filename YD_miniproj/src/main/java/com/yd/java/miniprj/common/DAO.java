@@ -11,7 +11,7 @@ public class DAO {
 	private static String password = "1234";
 	private static Connection con;
 	
-	public DAO() {}
+	private DAO() {}
 	
 	public static Connection getInstance() {
 		try {

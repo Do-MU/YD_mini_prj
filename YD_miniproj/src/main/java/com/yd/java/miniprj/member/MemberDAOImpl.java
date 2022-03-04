@@ -2,9 +2,7 @@ package com.yd.java.miniprj.member;
 
 import java.util.List;
 
-import com.yd.java.miniprj.common.DAO;
-
-public class MemberDAOImpl extends DAO implements MemberDAO {
+public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public List<MemberVO> memberSelectAll() {
