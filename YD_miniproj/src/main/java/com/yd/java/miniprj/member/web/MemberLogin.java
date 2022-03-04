@@ -17,9 +17,11 @@ public class MemberLogin implements Command{
 		MemberVO vo = new MemberVO();
 		HttpSession session = request.getSession();
 		
-		vo.setMemberID(request.getParameter("memberID"));
-		vo.setMemberPassword(request.getParameter("memberPassword"));
+		vo.setMemberID(request.getParameter("id"));
+		vo.setMemberPassword(request.getParameter("password"));
 		vo = mDAO.memberLogin(vo);
+		
+		System.out.println(vo.getMemberName());
 		
 		if(vo.getMemberName() != null) {
 			session.setAttribute("id", vo.getMemberID());

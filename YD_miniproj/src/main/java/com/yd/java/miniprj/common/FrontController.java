@@ -15,6 +15,7 @@ import com.yd.java.miniprj.command.HomeCommand;
 import com.yd.java.miniprj.member.web.MemberFindIdForm;
 import com.yd.java.miniprj.member.web.MemberFindPasswordForm;
 import com.yd.java.miniprj.member.web.MemberJoinForm;
+import com.yd.java.miniprj.member.web.MemberLogin;
 import com.yd.java.miniprj.member.web.MemberLoginForm;
 
 @WebServlet("*.do")
@@ -34,6 +35,8 @@ public class FrontController extends HttpServlet {
 		map.put("/memberFindIdForm.do", new MemberFindIdForm()); 					// 아이디찾기 화면
 		map.put("/memberFindPasswordForm.do", new MemberFindPasswordForm()); 		// 비밀번호찾기 화면
 		map.put("/memberJoinForm.do", new MemberJoinForm()); 						// 회원가입 화면
+		
+		map.put("/memberLogin.do", new MemberLogin());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)

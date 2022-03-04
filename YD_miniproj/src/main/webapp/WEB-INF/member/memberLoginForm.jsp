@@ -86,10 +86,10 @@
      <h1>로 그 인</h1>
      <div id="id_pass">
            <div id="id">
-              <input type="text" placeholder="아이디를 입력하세요.">
+              <input type="text" name="id" placeholder="아이디를 입력하세요.">
            </div>
            <div id="pass">
-              <input type="password" placeholder="비밀번호를 입력하세요.">
+              <input type="password" name="password" placeholder="비밀번호를 입력하세요.">
            </div>
      </div>
             
