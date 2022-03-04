@@ -1,4 +1,4 @@
-package com.yd.java.miniprj.command;
+package com.yd.java.miniprj.member.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

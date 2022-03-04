@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yd.java.miniprj.command.HomeCommand;
-import com.yd.java.miniprj.command.MemberFindIdForm;
-import com.yd.java.miniprj.command.MemberFindPasswordForm;
-import com.yd.java.miniprj.command.MemberJoinForm;
+import com.yd.java.miniprj.member.web.MemberFindIdForm;
+import com.yd.java.miniprj.member.web.MemberFindPasswordForm;
+import com.yd.java.miniprj.member.web.MemberJoinForm;
 import com.yd.java.miniprj.member.web.MemberLoginForm;
 
 @WebServlet("*.do")
