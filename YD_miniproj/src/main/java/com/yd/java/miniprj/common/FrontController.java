@@ -12,7 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yd.java.miniprj.command.HomeCommand;
-import com.yd.java.miniprj.member.MemberLoginForm;
+import com.yd.java.miniprj.command.MemberFindIdForm;
+import com.yd.java.miniprj.command.MemberFindPasswordForm;
+import com.yd.java.miniprj.command.MemberJoinForm;
+import com.yd.java.miniprj.member.web.MemberLoginForm;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -25,9 +28,12 @@ public class FrontController extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		// 명령 그룹을 담아 두는 곳
-		map.put("/home.do", new HomeCommand()); // 처음 접근하는 페이지
-		map.put("/memberLoginForm.do", new MemberLoginForm()); // 로그인 폼
-
+		map.put("/home.do", new HomeCommand()); 									// 홈 페이지
+		
+		map.put("/memberLoginForm.do", new MemberLoginForm()); 						// 로그인 화면
+		map.put("/memberFindIdForm.do", new MemberFindIdForm()); 					// 아이디찾기 화면
+		map.put("/memberFindPasswordForm.do", new MemberFindPasswordForm()); 		// 비밀번호찾기 화면
+		map.put("/memberJoinForm.do", new MemberJoinForm()); 						// 회원가입 화면
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)

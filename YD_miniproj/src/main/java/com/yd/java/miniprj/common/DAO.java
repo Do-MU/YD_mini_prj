@@ -4,14 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DataSource {
-	private static Connection con;
+public class DAO {
 	private static String driver = "oracle.jdbc.driver.OracleDriver";
 	private static String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private static String user = "minuk";
-	private static String password = "4424";
+	private static String user = "miniprj";
+	private static String password = "1234";
+	private static Connection con;
 	
-	private DataSource() {}
+	public DAO() {}
 	
 	public static Connection getInstance() {
 		try {

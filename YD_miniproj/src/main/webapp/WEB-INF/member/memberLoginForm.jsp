@@ -50,7 +50,6 @@
 	
 	#btns{
     	margin: 40px 0 0 0;
-    	text-decoration: underline;
 	}
 	
 	#btns li{
@@ -59,6 +58,16 @@
     	font-size: 20px;
 		text-align:center;
 	}
+	
+	a {
+		color: black;
+		text-decoration-line: none;
+	}
+	
+	a:hover {
+		color: red;
+	}
+	
 </style>
 </head>
 
@@ -80,9 +89,9 @@
          </div>
          
       	 <ul id="btns">
-         	<li>아이디 찾기</li>
-         	<li>비밀번호 찾기</li>
-         	<li>회원 가입</li>
+         	<li><a href='memberFindIdForm.do'>아이디 찾기</a></li>
+         	<li><a href='memberFindPasswordForm.do'>비밀번호 찾기</a></li>
+         	<li><a href='memberJoinForm.do'>회원 가입</a></li>
       	 </ul>
       </div>
    </form>
