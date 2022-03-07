@@ -15,12 +15,15 @@
     }
     
     td{
-        font-size: 20px;
         padding: 5px 10px 5px 60px;
     }
     
+    th{
+    	font_size: 40px;
+    }
+    
     input{
-        height: 20px;
+        height: 30px;
     }
     
     #btn{
@@ -30,7 +33,6 @@
     </style>
 </head> 
     <body>
-    <jsp:include page="../layout/home.jsp"/>
     	<div id="container">
 	        <form id="frm" action="memberJoin.do" onsubmit="return formCheck();" method="post">
 		        <div>
@@ -44,7 +46,7 @@
 		            <tr>
 		                <th>아이디</th>
 		                <td>
-		                	<input type="text" id="id" name="id" required="required" placeholder="아이디를 입려해주세요.">
+		                	<input type="text" id="id" name="id" required="required" placeholder="아이디를 입력해주세요.">
 		                	<button type="button" onclick="idCheckCall()" id="idCheckCall" value="No">중복체크</button>
 		                </td>
 		            </tr>
@@ -77,61 +79,59 @@
 	        </div>
         </div>
         <script type="text/javascript">
-	function formCheck(){
-		if(frm.idCheck.value == 'No'){
-			alert("아이디 중복체크를 해주세요!");
-			return false;
-		}
+			function formCheck(){
+				if(frm.idCheck.value == 'No'){
+					alert("아이디 중복체크를 해주세요!");
+					return false;
+				}
 		
-		if(frm.password.value == ""){
-			alert("패스워드는 필수 항목 입니다.");
-			frm.password.focus();
-			return false;
-		}
+				if(frm.password.value == ""){
+					alert("패스워드는 필수 항목 입니다.");
+					frm.password.focus();
+					return false;
+				}
 		
-		if(frm.name.value == ""){
-			alert("이름은 필수 항목 입니다.");
-			frm.name.focus();
-			return false;
-		}
+				if(frm.name.value == ""){
+					alert("이름은 필수 항목 입니다.");
+					frm.name.focus();
+					return false;
+				}
 		
-		if(frm.password.value != frm.password1.value){
-			alert("패스워드가 일치하지 않습니다.");
-			frm.password.value="";
-			frm.password1.value="";
-			frm.password.focus();
-			return false;
-		}
-		return true;
-	}
+				if(frm.password.value != frm.password1.value){
+					alert("패스워드가 일치하지 않습니다.");
+					frm.password.value="";
+					frm.password1.value="";
+					frm.password.focus();
+					return false;
+				}
+				
+				return true;
+			}
 	
-	// ajax 로 처리 예정
-	function idCheckCall() { //ajax로 아이디를 중복체크 하는 함수
-      const xhttp = new XMLHttpRequest(); //aJax객체를 생성
-      const id = frm.id.value;
-      xhttp.onreadystatechange = function() { //ajax가 동작될 때 실행하는 메소드
-         if(xhttp.readyState==4){ //통신이 연결되서 데이터가 다 전달 되었다면
-            if(xhttp.status==200){ //정상적으로 수행되고 결과가 왔을때
-               var b = xhttp.responseText; //결과데이터 받는 부분
-               if(b == true){
-                  alert(id + "는 사용가능한 아이디 입니다.");
-                  frm.idCheck.value="Yes";
-                  frm.idCheck.display="none";
-                  frm.password.focus();
-               }else{
-                  alert(id + "는 이미 사용하는 아이디 입니다.");
-                  frm.id.value="";
-                  frm.id.focus();
-               }
-            }
-         }   
-      }
-      xhttp.open("GET","ajaxIdCheck.do?id="+id);
-      xhttp.send();
-   }
-	
-	
-</script>
+			// ajax 로 처리 예정
+			function idCheckCall() { //ajax로 아이디를 중복체크 하는 함수
+		      const xhttp = new XMLHttpRequest(); //aJax객체를 생성
+		      const id = frm.id.value;
+		      xhttp.onreadystatechange = function() { //ajax가 동작될 때 실행하는 메소드
+		         if(xhttp.readyState==4){ //통신이 연결되서 데이터가 다 전달 되었다면
+		            if(xhttp.status==200){ //정상적으로 수행되고 결과가 왔을때
+		               var b = xhttp.responseText; //결과데이터 받는 부분
+		               if(b == true){
+		                  alert(id + "는 사용가능한 아이디 입니다.");
+		                  frm.idCheck.value="Yes";
+		                  frm.idCheck.display="none";
+		                  frm.password.focus();
+		               }else{
+		                  alert(id + "는 이미 사용하는 아이디 입니다.");
+		                  frm.id.value="";
+		                  frm.id.focus();
+		               }
+		            }
+		         }   
+		      }
+		      xhttp.open("GET","ajaxIdCheck.do?id="+id);
+		      xhttp.send();
+		   }
+		</script>
     </body>
-
 </html>
