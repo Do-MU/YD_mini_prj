@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface MemberDAO {
 	List<MemberVO> memberSelectAll();					// 회원 전체 조회
-	MemberVO memberSelectOne(MemberVO mem);				// 회원 단건 조회
+	MemberVO memberSelectOne(String id);				// 회원 단건 조회
 	String memberSelectID(MemberVO mem);				// 회원 ID 조회
 	String memberSelectPW(MemberVO mem);				// 회원 PW 조회
 	int memberInsert(MemberVO mem);						// 회원 가입

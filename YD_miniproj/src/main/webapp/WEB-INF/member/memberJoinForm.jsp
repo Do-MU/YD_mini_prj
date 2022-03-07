@@ -111,7 +111,7 @@
 	        </tr>
 	        <tr>
 	            <th>휴대폰 번호</th>
-	            <td><input type="tel" id="tel" name="tel"></td>
+	            <td><input type="tel" id="tel" name="tel" required="required"></td>
 	        </tr>
 	        <tr>
 	            <th>주소</th>

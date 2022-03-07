@@ -24,6 +24,8 @@ import com.yd.java.miniprj.member.web.MemberJoinForm;
 import com.yd.java.miniprj.member.web.MemberLogin;
 import com.yd.java.miniprj.member.web.MemberLoginForm;
 import com.yd.java.miniprj.member.web.MemberLogout;
+import com.yd.java.miniprj.member.web.MemberUpdate;
+import com.yd.java.miniprj.member.web.MemberUpdateForm;
 import com.yd.java.miniprj.qna.web.qnaList;
 
 @WebServlet("*.do")
@@ -40,11 +42,13 @@ public class FrontController extends HttpServlet {
 		map.put("/home.do", new HomeCommand()); 									// 홈 페이지
 		
 		map.put("/memberLoginForm.do", new MemberLoginForm()); 						// 로그인 화면
+		map.put("/memberJoinForm.do", new MemberJoinForm()); 						// 회원가입 화면
 		map.put("/memberFindIdForm.do", new MemberFindIdForm()); 					// 아이디찾기 화면
 		map.put("/memberFindId.do", new MemberFindId()); 							// 아이디찾기 결과화면
 		map.put("/memberFindPasswordForm.do", new MemberFindPasswordForm()); 		// 비밀번호찾기 화면
-		map.put("/memberFindPassword.do", new MemberFindPassword()); 			// 비밀번호찾기 결과화면
-		map.put("/memberJoinForm.do", new MemberJoinForm()); 						// 회원가입 화면
+		map.put("/memberFindPassword.do", new MemberFindPassword()); 				// 비밀번호찾기 결과화면
+		map.put("/memberUpdateForm.do", new MemberUpdateForm());					// 회원정보 수정
+		map.put("/memberUpdate.do", new MemberUpdate());							// 회원정보 수정 처리
 
 		map.put("/memberJoin.do", new MemberJoin());								// 회원가입 처리
 		map.put("/memberLogin.do", new MemberLogin());								// 로그인 처리

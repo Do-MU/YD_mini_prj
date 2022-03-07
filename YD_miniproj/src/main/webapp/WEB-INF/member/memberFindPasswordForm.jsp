@@ -34,15 +34,15 @@
     <table align="center">
         <tr>
             <td>아이디</td>
-            <td><input type="text" name="fid"></td>
+            <td><input type="text" name="fid" required="required"></td>
         </tr>
         <tr>
             <td>이름</td>
-			<td><input type="text" name="fname"></td>
+			<td><input type="text" name="fname" required="required"></td>
 		</tr>
 		<tr>
 			<td>휴대폰 번호</td>
-			<td><input type="tel" name="ftel"></td>
+			<td><input type="tel" name="ftel" required="required"></td>
 		</tr>
 	</table>
 	

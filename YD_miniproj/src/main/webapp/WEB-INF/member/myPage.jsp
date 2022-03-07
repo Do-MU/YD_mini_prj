@@ -20,7 +20,7 @@
 </style>
     
 <div id="myPage_container">
-	<div id="memberUpdate_div" onclick="location.href='memberUpdate.do'">
+	<div id="memberUpdate_div" onclick="location.href='memberUpdateForm.do'">
 		회원 정보 수정
 	</div>
 	

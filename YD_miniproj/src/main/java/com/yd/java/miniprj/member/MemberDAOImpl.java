@@ -43,12 +43,13 @@ public class MemberDAOImpl implements MemberDAO {
    }
    
    @Override
-   public MemberVO memberSelectOne(MemberVO mem) {
+   public MemberVO memberSelectOne(String id) {
 	   // 단일 회원 조회
 	   String sql = "SELECT * FROM MEMBERS WHERE MEMBER_ID = ?";
+	   MemberVO mem = new MemberVO();
 	   try {
 		   psmt = con.prepareStatement(sql);
-		   psmt.setString(1, mem.getMemberID());
+		   psmt.setString(1, id);
 		   rs = psmt.executeQuery();
 		   if (rs.next()) {
 			   mem.setMemberID(rs.getString("member_id"));
@@ -140,7 +141,8 @@ public class MemberDAOImpl implements MemberDAO {
    public int memberUpdate(MemberVO mem) {
 	   // 멤버 수정
 	   String sql = "UPDATE MEMBERS SET MEMBER_PASSWORD = NVL(?,MEMBER_PASSWORD), MEMBER_TEL = NVL(?, MEMBER_TEL), "
-			   + "MEMBER_ADDRESS = NVL(?, MEMBER_ADDRESS), MEMBER_EMAIL = NVL(?, MEMBER_EMAIL)" + "WHERE MEMBER_ID = ?";
+			   + "MEMBER_ADDRESS = NVL(?, MEMBER_ADDRESS), MEMBER_EMAIL = NVL(?, MEMBER_EMAIL)"
+			   + "WHERE MEMBER_ID = ?";
        int n = 0;
        try 	{
     	   psmt = con.prepareStatement(sql);
@@ -148,6 +150,7 @@ public class MemberDAOImpl implements MemberDAO {
     	   psmt.setString(2, mem.getMemberTel());
     	   psmt.setString(3, mem.getMemberAddress());
     	   psmt.setString(4, mem.getMemberEmail());
+    	   psmt.setString(5, mem.getMemberID());
     	   n = psmt.executeUpdate();
        } catch (SQLException e) {
     	   e.printStackTrace();
