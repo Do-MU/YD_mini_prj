@@ -21,5 +21,6 @@
     <div id="txtcontainer">
         <h1>회원가입 완료!! ${name }님 반갑습니다!!</h1>
         <button type="button" onclick="location.href='home.do'">홈으로</button>
+        <button type="button" onclick="location.href='memberLoginForm.do'">로그인</button>
     </div>
 </body>

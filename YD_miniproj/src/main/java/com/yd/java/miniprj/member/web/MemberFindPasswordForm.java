@@ -9,6 +9,7 @@ public class MemberFindPasswordForm implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
+		
 		return "member/memberFindPasswordForm.tiles";
 	}
 

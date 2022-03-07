@@ -22,6 +22,8 @@ public class MemberJoin implements Command {
 		vo.setMemberAddress(request.getParameter("address"));
 		vo.setMemberEmail(request.getParameter("email"));
 		
+		request.setAttribute("name", request.getParameter("name"));
+		
 		int n = mDAO.memberInsert(vo);
 		if(n!=0) {
 			return "member/joinSuccess.tiles";

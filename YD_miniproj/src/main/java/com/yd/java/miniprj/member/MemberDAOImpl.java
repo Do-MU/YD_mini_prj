@@ -44,7 +44,7 @@ public class MemberDAOImpl implements MemberDAO {
    
    @Override
    public MemberVO memberSelectOne(MemberVO mem) {
-	   // 한명분 조회
+	   // 단일 회원 조회
 	   String sql = "SELECT * FROM MEMBERS WHERE MEMBER_ID = ?";
 	   try {
 		   psmt = con.prepareStatement(sql);
@@ -65,6 +65,52 @@ public class MemberDAOImpl implements MemberDAO {
 	   }
 	   return mem;
    }
+   
+
+	@Override
+	public String memberSelectID(MemberVO mem) {
+		// ID 찾기
+		String id = "";
+		String sql = "SELECT MEMBER_ID FROM MEMBERS WHERE MEMBER_NAME = ? AND MEMBER_TEL = ?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, mem.getMemberName());
+			psmt.setString(2, mem.getMemberTel());
+			System.out.println(mem.getMemberName() + " " +mem.getMemberTel());
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				id = rs.getString("member_id");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return id;
+	}
+	
+	@Override
+	public String memberSelectPW(MemberVO mem) {
+		// 비밀번호 찾기
+		String password = "";
+		String sql = "SELECT MEMBER_PASSWORD FROM MEMBERS WHERE MEMBER_ID = ? AND MEMBER_NAME = ? AND MEMBER_TEL = ?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, mem.getMemberID());
+			psmt.setString(2, mem.getMemberName());
+			psmt.setString(3, mem.getMemberTel());
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				password = rs.getString("member_password");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return password;
+	}
+   
 
    @Override
    public int memberInsert(MemberVO mem) {
@@ -192,5 +238,5 @@ public class MemberDAOImpl implements MemberDAO {
       }
 
    }
-   
+
 }

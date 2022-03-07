@@ -124,7 +124,7 @@
         </table>	
 	    <div id="btn">
 	        <button type="submit">회원가입</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<button id="login_btn" onclick="history.back()">취소</button>
+			<button id="cancel_btn" onclick="history.back()">취소</button>
 		</div>
 	</form>
 </div>
