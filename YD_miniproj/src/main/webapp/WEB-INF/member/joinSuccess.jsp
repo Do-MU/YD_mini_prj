@@ -1,12 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<style>
+#txtcontainer{
+    text-align: center;
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+
+ h1{
+    font-size: 30px;
+    padding-bottom: 50px;
+}
+
+#txtcontainer button{
+    width: 70px;
+    height: 30px;
+}
+</style>
 <body>
-	Join Success!
+    <div id="txtcontainer">
+        <h1>회원가입 완료!! ${name }님 반갑습니다!!</h1>
+        <button type="button" onclick="location.href='home.do'">홈으로</button>
+    </div>
 </body>
-</html>

@@ -13,7 +13,7 @@ import com.yd.java.miniprj.member.MemberDAO;
 import com.yd.java.miniprj.member.MemberDAOImpl;
 
 
-@WebServlet("/AjaxMemberIdCheck")
+@WebServlet("/ajaxMemberIdCheck")
 public class AjaxMemberIdCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -24,13 +24,14 @@ public class AjaxMemberIdCheck extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		PrintWriter out = response.getWriter();
-		MemberDAO mDAO = new MemberDAOImpl();
+		MemberDAOImpl mDAO = new MemberDAOImpl();
 		String id = request.getParameter("id");
 		boolean check = mDAO.isIdCheck(id);
+		int cnt = 0;
 		if(check)
-			out.print(1);
-		else
-			out.print(0);
+			cnt = 1;
+		
+		out.print(cnt);
 		
 	}
 

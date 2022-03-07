@@ -24,9 +24,9 @@ public class MemberJoin implements Command {
 		
 		int n = mDAO.memberInsert(vo);
 		if(n!=0) {
-			return "member/joinSuccess";
+			return "member/joinSuccess.tiles";
 		} else {
-			return "member/joinFail";
+			return "member/joinFail.tiles";
 		}
 		
 		

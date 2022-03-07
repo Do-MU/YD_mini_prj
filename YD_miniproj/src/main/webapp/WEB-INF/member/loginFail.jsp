@@ -1,12 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<style>
+#txtcontainer{
+    text-align: center;
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+
+ h1{
+    font-size: 30px;
+    padding-bottom: 50px;
+}
+
+#txtcontainer button{
+    width: 70px;
+    height: 30px;
+}
+</style>
 <body>
-	login fail
+    <div id="txtcontainer">
+        <h1>로그인 실패!!</h1>
+        <button type="button" onclick="location.href='home.do'">홈으로</button>
+    </div>
 </body>
-</html>

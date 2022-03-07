@@ -79,6 +79,7 @@ public class MemberDAOImpl implements MemberDAO {
 		   psmt.setString(4, mem.getMemberTel());
 		   psmt.setString(5, mem.getMemberAddress());
 		   psmt.setString(6, mem.getMemberEmail());
+		   
 		   n = psmt.executeUpdate();
 		   
 	   } catch (SQLException e) {
@@ -131,14 +132,14 @@ public class MemberDAOImpl implements MemberDAO {
    @Override
    public boolean isIdCheck(String id) {
       // 아이디 중복 체크
-      String sql = "SELECT COUNT(MEMER_ID) AS MEMBER_ID FROM MEMBERS WHERE MEMBER_ID = ?";
+      String sql = "SELECT COUNT(MEMBER_ID) AS MEMBER_ID FROM MEMBERS WHERE MEMBER_ID = ?";
       boolean b = false;
       try {
       	psmt = con.prepareStatement(sql);
         psmt.setString(1, id);
         rs = psmt.executeQuery();
         if (rs.next()) {
-        	if (rs.getInt("ID") == 0) {
+        	if (rs.getInt("MEMBER_ID") == 0) {
         		b = true;
         	} else {
         		b = false;

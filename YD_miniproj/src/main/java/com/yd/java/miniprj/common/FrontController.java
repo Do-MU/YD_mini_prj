@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yd.java.miniprj.command.HomeCommand;
+import com.yd.java.miniprj.member.ajax.AjaxMemberIdCheck;
 import com.yd.java.miniprj.member.web.MemberFindIdForm;
 import com.yd.java.miniprj.member.web.MemberFindPasswordForm;
 import com.yd.java.miniprj.member.web.MemberJoin;
