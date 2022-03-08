@@ -15,14 +15,16 @@ public class ProductDAOImpl implements ProductDAO {
    private ResultSet rs;
 
    @Override
-   public List<ProductVO> productSelectAll() {
+   public List<ProductVO> productSelectAll(String category) {
       // 카테고리에 따른 제품 리스트 가져오기
       List<ProductVO> products = new ArrayList<ProductVO>();
       ProductVO vo;
-      String sql = "SELECT * FROM PRODUCTS WHRER PRODUCT_CATEGORY = ? ORDER BY PRODUCT_ID DESC";
+      String sql = "SELECT * FROM PRODUCTS WHERE PRODUCT_CATEGORY = ? ORDER BY PRODUCT_ID DESC";
       try {
          psmt = con.prepareStatement(sql);
+         psmt.setString(1, category);
          rs = psmt.executeQuery();
+         
          while(rs.next()) {
             vo = new ProductVO();
             vo.setProductID(rs.getInt("product_id"));
@@ -30,6 +32,8 @@ public class ProductDAOImpl implements ProductDAO {
             vo.setProductImg(rs.getString("product_img"));
             vo.setProductPrice(rs.getInt("product_price"));
             vo.setProductCategory(rs.getString("product_category"));
+            
+            products.add(vo);
          }
       } catch (SQLException e) {
          e.printStackTrace();

@@ -15,16 +15,10 @@
 		<ul class="navbar-nav">
 
 			<li class="nav-item"><a class="nav-link" href="home.do">홈</a></li>
-			<li class="nav-item"><a class="nav-link" >홍삼</a></li>
-			<li class="nav-item"><a class="nav-link" >비타민</a></li>
-			<li class="nav-item"><a class="nav-link" >콜라겐</a></li>
-			<li class="nav-item"><a class="nav-link" href="memberLoginForm.do">로그인</a></li>
-			<li class="nav-item"><a class="nav-link" >후기</a></li>
-			<!-- 
-			<li class="nav-item"><a class="nav-link" href="#" style="color: yellow;">(Guest)</a></li>
-	
-			<li class="nav-item"><a class="nav-link" href="#" style="color: yellow;">(${id })</a></li>
-			-->
+			<li class="nav-item"><a class="nav-link" href="productListH.do">홍삼</a></li>
+			<li class="nav-item"><a class="nav-link" href="productListV.do">비타민</a></li>
+			<li class="nav-item"><a class="nav-link" href="productListK.do">콜라겐</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">후기</a></li>
 		</ul>
 	</div>
 </nav>
