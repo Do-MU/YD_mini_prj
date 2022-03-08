@@ -23,7 +23,8 @@
 </style>
 <body>
     <div id="txtcontainer">
-        <h1>${name }님의 정보가 수정되었습니다.</h1>
+        <h1>비밀번호 변경 실패!!</h1>
         <button type="button" onclick="location.href='home.do'">홈으로</button>
+        <button type="button" onclick="location.href='memberLoginForm.do'">다시시도</button>
     </div>
 </body>

@@ -55,7 +55,7 @@
 	        <tr>
 	            <th>비밀번호</th>
 	            <td>**********
-	            <button type="button" onclick="location.href='memberChangePassword.do'">비밀번호 변경</button>
+	            <button type="button" onclick="location.href='memberChangePasswordForm.do'">비밀번호 변경</button>
 	            </td>
 	        </tr>
 	        <tr>
