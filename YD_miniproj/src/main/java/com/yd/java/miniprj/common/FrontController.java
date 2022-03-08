@@ -26,6 +26,8 @@ import com.yd.java.miniprj.member.web.MemberLoginForm;
 import com.yd.java.miniprj.member.web.MemberLogout;
 import com.yd.java.miniprj.member.web.MemberUpdate;
 import com.yd.java.miniprj.member.web.MemberUpdateForm;
+import com.yd.java.miniprj.member.web.memberChangePassword;
+import com.yd.java.miniprj.member.web.memberChangePasswordForm;
 import com.yd.java.miniprj.qna.web.qnaList;
 
 @WebServlet("*.do")
@@ -49,7 +51,9 @@ public class FrontController extends HttpServlet {
 		map.put("/memberFindPassword.do", new MemberFindPassword()); 				// 비밀번호찾기 결과화면
 		map.put("/memberUpdateForm.do", new MemberUpdateForm());					// 회원정보 수정
 		map.put("/memberUpdate.do", new MemberUpdate());							// 회원정보 수정 처리
-
+		map.put("/memberChangePasswordForm.do", new memberChangePasswordForm());	// 회원 비밀번호 수정
+		map.put("/memberChangePassword.do", new memberChangePassword());			// 회원 비밀번호 수정 처리
+		
 		map.put("/memberJoin.do", new MemberJoin());								// 회원가입 처리
 		map.put("/memberLogin.do", new MemberLogin());								// 로그인 처리
 		map.put("/memberLogout.do", new MemberLogout());							// 로그아웃 처리

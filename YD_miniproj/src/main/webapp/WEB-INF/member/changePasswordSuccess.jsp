@@ -23,7 +23,7 @@
 </style>
 <body>
     <div id="txtcontainer">
-        <h1>${name }님의 정보가 수정되었습니다.</h1>
+        <h1>정상적으로 변경되었습니다.</h1>
         <button type="button" onclick="location.href='home.do'">홈으로</button>
     </div>
 </body>
