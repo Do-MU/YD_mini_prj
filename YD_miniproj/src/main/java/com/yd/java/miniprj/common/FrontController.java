@@ -29,6 +29,7 @@ import com.yd.java.miniprj.member.web.MemberUpdate;
 import com.yd.java.miniprj.member.web.MemberUpdateForm;
 import com.yd.java.miniprj.member.web.memberChangePassword;
 import com.yd.java.miniprj.member.web.memberChangePasswordForm;
+import com.yd.java.miniprj.qna.web.qnaInsert;
 import com.yd.java.miniprj.qna.web.qnaList;
 
 @WebServlet("*.do")
@@ -66,6 +67,7 @@ public class FrontController extends HttpServlet {
 		map.put("/basketList.do", new basketList());								// 장바구니 목록
 		
 		map.put("/qnaList.do", new qnaList());										// 고객센터
+		map.put("/qnaInsert.do", new qnaInsert());									// 문의글 등록
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)

@@ -85,6 +85,6 @@
             </li>
         </ul>
  		<div class="btn">
-      		<button type="submit" id="btnsubmit">문의하기</button>
+      		<button href="./qnaInsert.do" id="btnsubmit">문의하기</button>
  		</div>
     </div>
