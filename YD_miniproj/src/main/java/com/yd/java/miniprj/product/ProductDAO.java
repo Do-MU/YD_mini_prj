@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface ProductDAO {
 	List<ProductVO> productSelectAll(String category);
-	ProductVO productSelectOne(ProductVO prd);
+	ProductVO productSelectOne(int prd_id);
 	int productInsert(ProductVO prd);
 }

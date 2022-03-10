@@ -44,16 +44,17 @@ public class ProductDAOImpl implements ProductDAO {
    }
 
    @Override
-   public ProductVO productSelectOne(ProductVO prd) {
+   public ProductVO productSelectOne(int prd_id) {
        // 단품 조회
-         String sql = "SELECT * FROM PRODUCTS WHERE PRODUCT_ID = ?";
+	   ProductVO prd = new ProductVO();
+       String sql = "SELECT * FROM PRODUCTS WHERE PRODUCT_ID = ?";
          try {
             psmt = con.prepareStatement(sql);
-            psmt.setInt(1, prd.getProductID());
+            psmt.setInt(1, prd_id);
             rs = psmt.executeQuery();
             if (rs.next()) {
                prd.setProductID(rs.getInt("product_id"));
-               prd.setProductName(rs.getString("roduct_name"));
+               prd.setProductName(rs.getString("product_name"));
                prd.setProductImg(rs.getString("product_img"));
                prd.setProductPrice(rs.getInt("product_price"));
                prd.setProductCategory(rs.getString("product_category"));

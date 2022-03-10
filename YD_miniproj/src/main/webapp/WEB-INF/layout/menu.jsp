@@ -15,9 +15,9 @@
 		<ul class="navbar-nav">
 
 			<li class="nav-item"><a class="nav-link" href="home.do">홈</a></li>
-			<li class="nav-item"><a class="nav-link" href="productListH.do">홍삼</a></li>
-			<li class="nav-item"><a class="nav-link" href="productListV.do">비타민</a></li>
-			<li class="nav-item"><a class="nav-link" href="productListK.do">콜라겐</a></li>
+			<li class="nav-item"><a class="nav-link" href="productList.do?category=홍삼">홍삼</a></li>
+			<li class="nav-item"><a class="nav-link" href="productList.do?category=비타민">비타민</a></li>
+			<li class="nav-item"><a class="nav-link" href="productList.do?category=콜라겐">콜라겐</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">후기</a></li>
 		</ul>
 	</div>

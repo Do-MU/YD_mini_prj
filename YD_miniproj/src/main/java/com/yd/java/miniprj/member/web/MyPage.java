@@ -5,12 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yd.java.miniprj.common.Command;
 
-public class memberChangePasswordForm implements Command {
+public class MyPage implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
 
-		return "member/memberChangePasswordForm.tiles";
+		return "member/myPage.tiles";
 	}
 
 }

@@ -8,7 +8,7 @@ import com.yd.java.miniprj.common.Command;
 import com.yd.java.miniprj.member.MemberDAOImpl;
 import com.yd.java.miniprj.member.MemberVO;
 
-public class memberChangePassword implements Command {
+public class MemberChangePassword implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
