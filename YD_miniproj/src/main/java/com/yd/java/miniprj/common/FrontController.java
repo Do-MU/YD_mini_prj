@@ -11,11 +11,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.yd.java.miniprj.basket.web.basketList;
+import com.yd.java.miniprj.basket.web.BasketAdd;
+import com.yd.java.miniprj.basket.web.BasketList;
 import com.yd.java.miniprj.command.HomeCommand;
-import com.yd.java.miniprj.member.web.myPage;
-import com.yd.java.miniprj.product.web.productList;
-import com.yd.java.miniprj.member.ajax.AjaxMemberIdCheck;
+import com.yd.java.miniprj.product.web.ProductInsert;
+import com.yd.java.miniprj.product.web.ProductInsertForm;
+import com.yd.java.miniprj.product.web.ProductList;
+import com.yd.java.miniprj.product.web.ProductPage;
+import com.yd.java.miniprj.member.web.MemberChangePassword;
+import com.yd.java.miniprj.member.web.MemberChangePasswordForm;
 import com.yd.java.miniprj.member.web.MemberFindId;
 import com.yd.java.miniprj.member.web.MemberFindIdForm;
 import com.yd.java.miniprj.member.web.MemberFindPassword;
@@ -27,14 +31,13 @@ import com.yd.java.miniprj.member.web.MemberLoginForm;
 import com.yd.java.miniprj.member.web.MemberLogout;
 import com.yd.java.miniprj.member.web.MemberUpdate;
 import com.yd.java.miniprj.member.web.MemberUpdateForm;
-import com.yd.java.miniprj.member.web.memberChangePassword;
-import com.yd.java.miniprj.member.web.memberChangePasswordForm;
 import com.yd.java.miniprj.qna.web.QnaAnswer;
 import com.yd.java.miniprj.qna.web.QnaAnswerUpdate;
 import com.yd.java.miniprj.qna.web.QnaInsert;
 import com.yd.java.miniprj.qna.web.QnaInsertForm;
 import com.yd.java.miniprj.qna.web.QnaInsertSuccess;
 import com.yd.java.miniprj.qna.web.QnaList;
+import com.yd.java.miniprj.member.web.MyPage;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -58,17 +61,19 @@ public class FrontController extends HttpServlet {
 		map.put("/memberFindId.do", new MemberFindId()); 							// 아이디찾기 결과화면
 		map.put("/memberFindPasswordForm.do", new MemberFindPasswordForm()); 		// 비밀번호찾기 화면
 		map.put("/memberFindPassword.do", new MemberFindPassword()); 				// 비밀번호찾기 결과화면
-		map.put("/myPage.do", new myPage());										// 마이페이지
+		map.put("/myPage.do", new MyPage());										// 마이페이지
 		map.put("/memberUpdateForm.do", new MemberUpdateForm());					// 회원정보 수정
 		map.put("/memberUpdate.do", new MemberUpdate());							// 회원정보 수정 처리
-		map.put("/memberChangePasswordForm.do", new memberChangePasswordForm());	// 회원 비밀번호 수정
-		map.put("/memberChangePassword.do", new memberChangePassword());			// 회원 비밀번호 수정 처리
+		map.put("/memberChangePasswordForm.do", new MemberChangePasswordForm());	// 회원 비밀번호 수정
+		map.put("/memberChangePassword.do", new MemberChangePassword());			// 회원 비밀번호 수정 처리
 		
-		map.put("/productListH.do", new productList());								// 제품 목록 출력
-		map.put("/productListV.do", new productList());								// 제품 목록 출력
-		map.put("/productListK.do", new productList());								// 제품 목록 출력
+		map.put("/productList.do", new ProductList());								// 제품 목록 출력
+		map.put("/productPage.do", new ProductPage());								// 제품 상세 페이지
+		map.put("/productInsertForm.do", new ProductInsertForm());					// 제품 등록 화면
+		map.put("/productInsert.do", new ProductInsert());							// 제품 등록 처리
 		
-		map.put("/basketList.do", new basketList());								// 장바구니 목록
+		map.put("/basketList.do", new BasketList());								// 장바구니 목록
+		map.put("/basketAdd.do", new BasketAdd());									// 장바구니 상품 추가
 		
 		map.put("/qnaList.do", new QnaList());										// 고객센터
 		map.put("/qnaInsertForm.do", new QnaInsertForm());							// 문의글 등록화면

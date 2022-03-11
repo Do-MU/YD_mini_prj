@@ -23,7 +23,7 @@ public class QnaInsert implements Command{
 		vo.setMemberID((String) session.getAttribute("id"));
 		
 		int n = qDAO.qnaInsert(vo);
-		request.setAttribute("togo", "home.do");
+		request.setAttribute("togo", "qnaList.do");
 		return "qna/sendRedirect.jsp";
 	}
 
