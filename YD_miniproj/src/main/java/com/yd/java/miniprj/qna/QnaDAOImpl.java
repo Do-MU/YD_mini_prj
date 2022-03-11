@@ -1,7 +1,6 @@
 package com.yd.java.miniprj.qna;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,7 +9,7 @@ import java.util.List;
 
 import com.yd.java.miniprj.common.DAO;
 
-public class QnaImpl implements QnaDAO {
+public class QnaDAOImpl implements QnaDAO {
 	private Connection con = DAO.getInstance();
 	private PreparedStatement psmt;
 	private ResultSet rs;
@@ -20,7 +19,7 @@ public class QnaImpl implements QnaDAO {
 		// 전제초회
 		List<QnaVO> qna = new ArrayList<QnaVO>();
 		QnaVO vo;
-		String sql = "SELECT * FROM QNA WHRER QNA_ID = ? ORDER BY QNA_ID";
+		String sql = "SELECT * FROM QNA ORDER BY QNA_ID";
 		try {
 			psmt = con.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -73,15 +72,32 @@ public class QnaImpl implements QnaDAO {
 	@Override
 	public int qnaInsert(QnaVO qna) {
 		// 등록
-		String sql = "INSERT INTO QNA(QNA_ID, QNA_TITLE, QNA_CONTENT, QNA_DATE, MEMBER_ID) VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO QNA(QNA_ID, QNA_TITLE, QNA_CONTENT, QNA_DATE, MEMBER_ID) VALUES(sq_qna.nextval,?,?,sysdate,?)";
 		int n = 0;
 		try {
 			psmt = con.prepareStatement(sql);
-			psmt.setInt(1, qna.getQnaId());
-			psmt.setString(2, qna.getQnaTitle());
-			psmt.setString(3, qna.getQnaContent());
-			psmt.setDate(4, (Date) qna.getQnaDate());
-			psmt.setString(5, qna.getMemberID());
+			psmt.setString(1, qna.getQnaTitle());
+			psmt.setString(2, qna.getQnaContent());
+			psmt.setString(3, qna.getMemberID());
+			
+			n= psmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
+	}
+	
+	@Override
+	public int qnaAnswer(QnaVO qna) {
+		String sql = "UPDATE QNA SET ANSWER_CONTENT = ?, IS_ANSWERED = 1 WHERE QNA_ID = ?";
+		int n = 0;
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, qna.getAnswerContent());
+			psmt.setInt(2, qna.getQnaId());
 			
 			n= psmt.executeUpdate();
 			
@@ -106,5 +122,6 @@ public class QnaImpl implements QnaDAO {
            e.printStackTrace();
         }
     }
+
 
 }

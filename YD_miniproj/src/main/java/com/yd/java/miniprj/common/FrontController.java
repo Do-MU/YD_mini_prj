@@ -29,8 +29,12 @@ import com.yd.java.miniprj.member.web.MemberUpdate;
 import com.yd.java.miniprj.member.web.MemberUpdateForm;
 import com.yd.java.miniprj.member.web.memberChangePassword;
 import com.yd.java.miniprj.member.web.memberChangePasswordForm;
-import com.yd.java.miniprj.qna.web.qnaInsert;
-import com.yd.java.miniprj.qna.web.qnaList;
+import com.yd.java.miniprj.qna.web.QnaAnswer;
+import com.yd.java.miniprj.qna.web.QnaAnswerUpdate;
+import com.yd.java.miniprj.qna.web.QnaInsert;
+import com.yd.java.miniprj.qna.web.QnaInsertForm;
+import com.yd.java.miniprj.qna.web.QnaInsertSuccess;
+import com.yd.java.miniprj.qna.web.QnaList;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -66,8 +70,12 @@ public class FrontController extends HttpServlet {
 		
 		map.put("/basketList.do", new basketList());								// 장바구니 목록
 		
-		map.put("/qnaList.do", new qnaList());										// 고객센터
-		map.put("/qnaInsert.do", new qnaInsert());									// 문의글 등록
+		map.put("/qnaList.do", new QnaList());										// 고객센터
+		map.put("/qnaInsertForm.do", new QnaInsertForm());							// 문의글 등록화면
+		map.put("/qnaInsert.do", new QnaInsert());									// 문의글 등록
+		map.put("/qnaInsertSuccess.do", new QnaInsertSuccess());					// 문의글등록 결과화면
+		map.put("/qnaAnswer.do", new QnaAnswer());									// 문의글 답변화면
+		map.put("/qnaAnswerUpdate.do", new QnaAnswerUpdate());						// 문의글답변 결과 화면
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -91,7 +99,7 @@ public class FrontController extends HttpServlet {
 
 			// 뷰페이지 포워드
 			if (viewPage.endsWith(".jsp"))
-				viewPage = "WEB-INF/jsp" + viewPage;
+				viewPage = "WEB-INF/" + viewPage;
 
 			System.out.println(viewPage);
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);

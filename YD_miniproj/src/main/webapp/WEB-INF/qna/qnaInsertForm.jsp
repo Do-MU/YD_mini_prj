@@ -19,16 +19,16 @@
     }
 </style>
 <html>
-<form name="frm" action="">
+<form name="frm" action="qnaInsert.do?" method="post">
     <div class="qna">
         <h1>문의하기</h1>
         <div class="title">
         <span style="font-size: 1.3em; font-weight: 1000;">제목</span>
-            <input type="text" style="height: 30px; width: 600px; font-size:20px;" placeholder="제목을 입력해주세요."><br>
+            <input name="qtitle" type="text" style="height: 30px; width: 600px; font-size:20px;" placeholder="제목을 입력해주세요."><br>
         </div>
         <div class="content">
         <span style="font-size: 1.3em; font-weight: 1000;">내용</span>
-            <textarea placeholder="내용을 입력해주세요."></textarea>
+            <textarea name="qcontent" placeholder="내용을 입력해주세요."></textarea>
             <p><input type="submit" value="등록" style="height: 50px; width: 100px; font-size: 25px;"></p>
         </div>    
     </div>
