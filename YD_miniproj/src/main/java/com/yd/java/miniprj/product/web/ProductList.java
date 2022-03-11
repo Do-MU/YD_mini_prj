@@ -55,6 +55,7 @@ public class ProductList implements Command {
 		}
 		*/
 		session.setAttribute("products", pList);
+		session.setAttribute("prd_category", category);
 		
 		return "product/productList.tiles";
 	}

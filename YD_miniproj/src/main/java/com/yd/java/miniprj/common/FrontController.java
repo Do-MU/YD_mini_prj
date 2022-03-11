@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.yd.java.miniprj.basket.web.basketList;
+import com.yd.java.miniprj.basket.web.BasketAdd;
+import com.yd.java.miniprj.basket.web.BasketList;
 import com.yd.java.miniprj.command.HomeCommand;
+import com.yd.java.miniprj.product.web.ProductInsert;
+import com.yd.java.miniprj.product.web.ProductInsertForm;
 import com.yd.java.miniprj.product.web.ProductList;
 import com.yd.java.miniprj.product.web.ProductPage;
 import com.yd.java.miniprj.member.ajax.AjaxMemberIdCheck;
@@ -63,8 +66,11 @@ public class FrontController extends HttpServlet {
 		
 		map.put("/productList.do", new ProductList());								// 제품 목록 출력
 		map.put("/productPage.do", new ProductPage());								// 제품 상세 페이지
+		map.put("/productInsertForm.do", new ProductInsertForm());					// 제품 등록 화면
+		map.put("/productInsert.do", new ProductInsert());							// 제품 등록 처리
 		
-		map.put("/basketList.do", new basketList());								// 장바구니 목록
+		map.put("/basketList.do", new BasketList());								// 장바구니 목록
+		map.put("/basketAdd.do", new BasketAdd());									// 장바구니 상품 추가
 		
 		map.put("/qnaList.do", new qnaList());										// 고객센터
 		map.put("/qnaInsert.do", new qnaInsert());									// 문의글 등록

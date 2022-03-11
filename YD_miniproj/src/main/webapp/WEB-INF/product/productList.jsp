@@ -59,8 +59,17 @@
 	    font-size: 1.3rem;
 	    font-weight:normal;
 	}
+	
+	#prd_add_btn{
+		width: 60px;
+		height: 60px;
+		float: right;
+	}
 </style>
 
+<div>
+	<button onclick="location.href='productInsertForm.do?prd_category=${prd_category}'" id="prd_add_btn"> + </button>
+</div>
 <div class="list con">
     <ul class="row">
     	<c:forEach var="vo" items="${products }">
@@ -74,6 +83,7 @@
     	</c:forEach>
     </ul>
 </div>
+
 
 <script>
 	for(let i = 0; i<document.getElementsByClassName('cell').length; i++){

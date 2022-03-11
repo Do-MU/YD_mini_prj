@@ -71,15 +71,14 @@ public class ProductDAOImpl implements ProductDAO {
    @Override
    public int productInsert(ProductVO prd) {
       // 제품 등록
-      String sql = "INSERT INTO PRODUCTS VALUES(?,?,?,?,?)";
+      String sql = "INSERT INTO PRODUCTS VALUES(sq_products.nextval,?,?,?,?)";
       int n = 0;
          try {
             psmt = con.prepareStatement(sql);
-            psmt.setInt(1, prd.getProductID());
-            psmt.setString(2, prd.getProductName());
-            psmt.setString(3, prd.getProductImg());
-            psmt.setInt(4, prd.getProductPrice());
-            psmt.setString(5, prd.getProductCategory());
+            psmt.setString(1, prd.getProductName());
+            psmt.setString(2, prd.getProductImg());
+            psmt.setInt(3, prd.getProductPrice());
+            psmt.setString(4, prd.getProductCategory());
             n = psmt.executeUpdate();
             
          } catch (SQLException e) {

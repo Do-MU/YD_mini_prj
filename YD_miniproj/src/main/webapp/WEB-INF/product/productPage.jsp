@@ -8,7 +8,7 @@
 		width: 100%
 	}
 	
-	#container> section> div{
+	#container> section:nth-child(1)> div{
 		display: inline-block;
 	}
 	
@@ -49,7 +49,7 @@
 		width: 70px;
 	}
 	
-	#desc_box> ul> li> button{
+	#desc_box> form> ul> li> button{
 		width: 90px;
 		height: 50px;
 		background-color: green;
@@ -66,25 +66,26 @@
 	
 	#desc_img{
 		text-align: center;
-		margin: 0 auto;
+		padding: 100px 0;
 	}
 </style>
 
 <div id="container">
 	<section>
 		<div id="img_box"><img src="img/${product.productImg }(1).png"></div>
-			
 		<div id="desc_box">
-			<h1>[${product.productCategory }]${product.productName }</h1>
-			<ul>
-				<li><h3> 판매가 &nbsp;&nbsp;&nbsp;<input id="price1" value="${product.productPrice }"/>원</h3></li>
-				<li><h3> 수량&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" min="1" max="50" value="1" id="prd_quantity" onclick="quantity_cal()">개</h3></li>
-				<li><h2><b> 총 금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="price2" value="${product.productPrice}"/>원</b></h2></li>
-				<li>
-					<button id="order_btn">주문하기</button>
-					<button id="basket_btn">장바구니</button>
-				</li>
-			</ul>
+			<form id="frm" action="/purchase.do?pr_id=${product.productID }">
+				<h1>[${product.productCategory }]${product.productName }</h1>
+				<ul>
+					<li><h3> 판매가 &nbsp;&nbsp;&nbsp;<input id="price1" value="${product.productPrice }"/>원</h3></li>
+					<li><h3> 수량&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" min="1" max="50" value="1" id="prd_quantity" onclick="quantity_cal()">개</h3></li>
+					<li><h2><b> 총 금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="price2" value="${product.productPrice}"/>원</b></h2></li>
+					<li>
+						<button id="order_btn" type="submit">주문하기</button>
+						<button id="basket_btn" type="submit" formaction="/basketAdd.do?pr_id=${product.productID }">장바구니</button>
+					</li>
+				</ul>
+			</form>
 		</div>
 	</section>
 	<hr>
